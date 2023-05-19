@@ -20,6 +20,7 @@ func StartServer() {
 	fmt.Println(string(bs))
 
 	addresRoutes(e)
+	faqRoutes(e)
 
 	log.Fatal(e.Start(":8080"))
 }
