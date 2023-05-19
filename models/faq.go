@@ -11,7 +11,7 @@ const (
 
 type FAQ struct {
 	ID          int
-	question    string
-	answer      string
-	questionTag TagName
+	Question    string
+	Answer      string
+	QuestionTag TagName
 }
