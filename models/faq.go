@@ -1,17 +1,17 @@
 package models
 
-type TagName string
+type TagType int
 
 const (
-	ACCOUNT       TagName = "Account"
-	PAYMENT       TagName = "Payment"
-	RETURNPRODUCT TagName = "Return_Product"
-	SENDFEEDBACK  TagName = "Send_Feedback"
+	ACCOUNT int = iota
+	PAYMENT
+	RETURNPRODUCT
+	SENDFEEDBACK
 )
 
 type FAQ struct {
 	ID          int
 	Question    string
 	Answer      string
-	QuestionTag TagName
+	QuestionTag []TagType
 }
