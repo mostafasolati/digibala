@@ -75,7 +75,7 @@ func createSupplierHandler(c echo.Context) error {
 		return err
 	}
 	suppliers = append(suppliers, *supplier)
-	return c.JSON(http.StatusOK, supplier)
+	return c.JSON(http.StatusCreated, supplier)
 }
 
 func deleteSupplierHandler(c echo.Context) error {
