@@ -8,7 +8,7 @@ import (
 )
 
 func FindAll() ([]*models.CurrencyResponse, error) {
-	var all []db.Currency
+	var all []models.Currency
 	result := db.DB.Find(&all)
 	if result.Error != nil {
 		return nil, result.Error
@@ -24,7 +24,7 @@ func FindAll() ([]*models.CurrencyResponse, error) {
 }
 
 func FindById(id int) (*models.CurrencyResponse, error) {
-	var currency db.Currency
+	var currency models.Currency
 	err := db.DB.Where("id = ?", id).First(&currency).Error
 	if err != nil && err != gorm.ErrRecordNotFound {
 		return nil, err
@@ -40,7 +40,7 @@ func FindById(id int) (*models.CurrencyResponse, error) {
 }
 
 func Create(request *models.CurrencyRequest) (*models.CurrencyResponse, error) {
-	var currency db.Currency
+	var currency models.Currency
 	err := mapstructure.Decode(request, &currency)
 	if err != nil {
 		return nil, err
@@ -60,7 +60,7 @@ func Create(request *models.CurrencyRequest) (*models.CurrencyResponse, error) {
 }
 
 func Update(id int, request *models.CurrencyRequest) (*models.CurrencyResponse, error) {
-	var currency db.Currency
+	var currency models.Currency
 
 	result := db.DB.First(&currency, id)
 	if result.Error != nil {
@@ -87,7 +87,7 @@ func Update(id int, request *models.CurrencyRequest) (*models.CurrencyResponse, 
 }
 
 func Delete(id int) error {
-	var currency db.Currency
+	var currency models.Currency
 
 	result := db.DB.First(&currency, id)
 	if result.Error != nil {

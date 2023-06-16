@@ -1,6 +1,7 @@
 package db
 
 import (
+	"currency/models"
 	"gorm.io/driver/sqlite"
 	_ "gorm.io/driver/sqlite"
 	"gorm.io/gorm"
@@ -16,7 +17,7 @@ func ConnectDatabase() {
 		panic("Failed to connect to database!")
 	}
 
-	err = database.AutoMigrate(&Currency{})
+	err = database.AutoMigrate(&models.Currency{})
 	if err != nil {
 		return
 	}

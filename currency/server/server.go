@@ -1,7 +1,7 @@
 package server
 
 import (
-	"currency/controller"
+	"currency/handlers"
 	"fmt"
 	"github.com/labstack/echo/v4"
 	"log"
@@ -19,7 +19,7 @@ func StartServer() {
 	bs, _ := os.ReadFile("../server/banner.txt")
 	fmt.Println(string(bs))
 
-	controller.CurrencyRoutes(e)
+	handlers.CurrencyRoutes(e)
 
 	log.Fatal(e.Start(":8080"))
 }
