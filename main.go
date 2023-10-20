@@ -7,6 +7,7 @@ import (
 func main() {
 
 	server := echo.New()
-	UserRoutes(server)	
+	UserRoutes(server)
+	VoucherRoutes(server)
 	server.Start("localhost:6060")
 }
