@@ -1,4 +1,4 @@
-package main
+package product
 
 type ServiceInterface interface {
 	Create(*Product) error
