@@ -64,7 +64,9 @@ func createVoucherHandler(service VoucherServiceInterface) echo.HandlerFunc {
 		if err := c.Bind(voucher); err != nil {
 			return err
 		}
-		service.Create(voucher)
+		if err := service.Create(voucher); err != nil {
+			return c.JSON(http.StatusBadRequest, Message{Message: "Error on creating voucher"})
+		}
 		return c.JSON(http.StatusOK, voucher)
 	}
 }
