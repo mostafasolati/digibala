@@ -121,7 +121,7 @@ func VoucherRoutes(server *echo.Echo) {
 	vocherService := NewVoucherService()
 	server.POST("/voucher", createVoucherHandler(vocherService))
 	server.PUT("/voucher", updateVoucherHandler(vocherService))
-	server.DELETE("/voucher", deleteVoucherHandler(vocherService))
+	server.DELETE("/voucher/:id", deleteVoucherHandler(vocherService))
 	server.GET("/voucher/:id", findVoucherHandler(vocherService))
 	server.GET("/voucher", listVoucherHandler(vocherService))
 }
