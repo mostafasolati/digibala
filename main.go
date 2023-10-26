@@ -9,5 +9,6 @@ func main() {
 	server := echo.New()
 	UserRoutes(server)
 	VoucherRoutes(server)
+	DeliveryTypesRoutes(server)
 	server.Start("localhost:6060")
 }
