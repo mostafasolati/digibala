@@ -1,13 +1,13 @@
-package main
+	package main
 
-import (
-	"fmt"
-	"net/http"
-	"strconv"
-	"time"
+	import (
+		"fmt"
+		"net/http"
+		"strconv"
+		"time"
 
-	"github.com/labstack/echo/v4"
-)
+		"github.com/labstack/echo/v4"
+	)
 
 type Voucher struct {
 	Id              int
@@ -23,7 +23,7 @@ type vocherService struct{}
 
 type VoucherServiceInterface interface {
 	Create(*Voucher) error
-	Update(*Voucher) error
+	Update(*Voucher) error	
 	Delete(int) error
 	Find(int) (*Voucher, error)
 	List() ([]*Voucher, error)

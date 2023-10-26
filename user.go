@@ -60,6 +60,7 @@ func (u *userService) Delete(id int) error {
 	return nil
 }
 
+
 func (u *userService) Find(id int) (*User, error) {
 	return users[id], nil
 }
